@@ -1,6 +1,7 @@
 #include<iostream>
 #include<string>
 using namespace std;
+
 // create a Base Class man
 class Man{
 private:
@@ -21,6 +22,14 @@ public:
 void Man::info()const{
         cout<<"My name is "<< _name << " and my age is " << _age<<endl;
 }
+// create a another class
+
+class A{
+public: 
+    void gotMoney(){
+        cout<< "I have 5K money in my Account" <<endl; 
+    }
+};
 
 // derived class
 // Superman
@@ -35,7 +44,7 @@ public:
 };
 
 // Spiderman
-class Spiderman : public Man{
+class Spiderman : public Man , public A { // Multiple Inheritance suppoort in C++.
 private:
     bool _webbing;
 public:
@@ -54,5 +63,6 @@ int main(){
     Spiderman sreya("Sreya Das");
     sreya.info();
     sreya.run();
+    sreya.gotMoney();
 
 }
